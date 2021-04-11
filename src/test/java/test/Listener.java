@@ -1,4 +1,4 @@
-package testCases;
+package test;
 
 
 import io.qameta.allure.Allure;

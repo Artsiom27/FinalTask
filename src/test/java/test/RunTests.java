@@ -1,4 +1,4 @@
-
+/*
 package testCases;
 
 import org.junit.platform.runner.JUnitPlatform;
@@ -16,5 +16,5 @@ import org.junit.runners.Suite;
 
 public class RunTests {  //this class doesn't run the test suite, without it all tests pass  !!!???
 
-}
+}*/
 

@@ -34,48 +34,31 @@ public class CartPage {
         return new CartPage();
     }
 
-    public double getTotalPrise() {
-        String priceTotal = driver.findElement(TOTAL_PRICE).getText();
-        String[] split = priceTotal.split("[\\$]");
+    public double getShippingPrice() {
+        return getPrice(PRICE_OF_SHIPPING);
+    }
+
+    public double getThirdPrice() {
+        return getPrice(PRICE_OF_THIRD);
+    }
+
+    public double getSecondPrice() {
+        return getPrice(PRICE_OF_SECOND);
+    }
+
+    public double getFirstPrice() {
+        return getPrice(PRICE_OF_FIRST);
+    }
+
+    public double getTotalPriCe() {
+        return getPrice(TOTAL_PRICE);
+    }
+
+    private double getPrice(By price) {
+        String priceToSplit = driver.findElement(price).getText();
+        String[] split = priceToSplit.split("[\\$]");
         String delimiter = "";
-        String totalString = String.join(delimiter, split);
-        double totalPrice = Double.parseDouble(totalString);
-        return totalPrice;
-    }
-
-    public double getFirstPrise() {
-        String priceFirst = driver.findElement(PRICE_OF_FIRST).getText();
-        String[] splitFirst = priceFirst.split("[\\$]");
-        String delimiterFirst = "";
-        String stringFirst = String.join(delimiterFirst, splitFirst);
-        double priseFirst = Double.parseDouble(stringFirst);
-        return priseFirst;
-    }
-
-    public double getSecondPrise() {
-        String priceSecond = driver.findElement(PRICE_OF_SECOND).getText();
-        String[] splitSecond = priceSecond.split("[\\$]");
-        String delimiterSecond = "";
-        String stringSecond = String.join(delimiterSecond, splitSecond);
-        double priseSecond = Double.parseDouble(stringSecond);
-        return priseSecond;
-    }
-
-    public double getThirdPrise() {
-        String priceThird = driver.findElement(PRICE_OF_THIRD).getText();
-        String[] splitThird = priceThird.split("[\\$]");
-        String delimiterThird = "";
-        String stringThird = String.join(delimiterThird, splitThird);
-        double priseThird = Double.parseDouble(stringThird);
-        return priseThird;
-    }
-
-    public double getShippingPrise() {
-        String priceShip = driver.findElement(PRICE_OF_SHIPPING).getText();
-        String[] splitShip = priceShip.split("[\\$]");
-        String delimiterShip = "";
-        String stringShip = String.join(delimiterShip, splitShip);
-        double priseShip = Double.parseDouble(stringShip);
-        return priseShip;
+        String priceString = String.join(delimiter, split);
+        return Double.parseDouble(priceString);
     }
 }
